@@ -3,7 +3,7 @@ import sys
 import pprint
 
 NGRAM_COUNT = 3
-counts = {}
+ngram_counts = {}
 
 
 def ngrams(word, n):
@@ -21,9 +21,9 @@ def read_lines_as_ngrams(from_file, n):
 
 for word, ngram_list in read_lines_as_ngrams(sys.argv[1], NGRAM_COUNT):
     for ngram in ngram_list:
-        if ngram not in counts:
-            counts[ngram] = 0
-        counts[ngram] += 1
+        if ngram not in ngram_counts:
+            ngram_counts[ngram] = 0
+        ngram_counts[ngram] += 1
 
 
-pprint.pprint(counts)
+pprint.pprint(ngram_counts)
